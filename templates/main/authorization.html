@@ -1,0 +1,41 @@
+{% extends 'main/autorization_base.html' %}
+{% block content %}
+    <h1>Create an account</h1>
+    <p>Please, sign up using the following form:</p>
+    <form action="." method="post">
+{#       логин: {{ user_form.username }}#}
+{#       имя {{ user_form.first_name }}#}
+{#       фамилия {{ user_form.last_name }}#}
+{#       отчество {{ profile_form.middle_name }}#}
+{#       почта {{ user_form.email }}#}
+{#       телефон {{ profile_form.phone }}#}
+{#       пароль {{ user_form.password }}#}
+{#       повторить пароль {{ user_form.password2 }}#}
+        {{ user_form }}
+        {{ profile_form }}
+        {% csrf_token %}
+        <p><input type="submit" value="Create my account"></p>
+    </form>
+{% endblock %}
+{#  <div class="container">#}
+{#    <h1>Авторизация</h1>#}
+{#    <p>Пожалуйста, заполните все поля.</p>#}
+{#    <hr>#}
+{##}
+{#    <label for="first_name"><b>Имя</b></label>#}
+{#    <input type="text" placeholder="Введите имя" name="first_name" required>#}
+{##}
+{#    <label for="second_name"><b>Фамилия</b></label>#}
+{#    <input type="text" placeholder="Введите фамилию" name="second_name" required>#}
+{##}
+{#    <label for="middle_name"><b>Отчество</b></label>#}
+{#    <input type="text" placeholder="Введите отчество" name="middle_name" required>#}
+{##}
+{#    <label for="email"><b>Email</b></label>#}
+{#    <input type="email" placeholder="Введите Email" name="email" required>#}
+{##}
+{#    <label for="phone"><b>Number phone</b></label>#}
+{#    <input type="tel" placeholder="Введите number phone" name="phone" required>#}
+{##}
+{#    <button type="submit" class="registerbtn">Авторизация</button>#}
+{#  </div>#}

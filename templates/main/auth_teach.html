@@ -1,0 +1,16 @@
+{% extends 'main/autorization_base.html' %}
+{% block content %}
+  <div class="container">
+    <h1>Авторизация</h1>
+    <p>Пожалуйста, заполните все поля.</p>
+    <hr>
+    <label for="email"><b>Email</b></label>
+    <input type="email" placeholder="Введите Email" name="email" required>
+
+    <label for="password"><b>Password</b></label>
+    <input type="password" placeholder="Enter password" name="password" required>
+
+    <button type="submit" class="registerbtn">Авторизация</button>
+  </div>
+    {{ form }}
+{% endblock %}

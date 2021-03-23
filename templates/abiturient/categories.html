@@ -1,0 +1,15 @@
+
+{% extends 'abiturient/layout_abit.html' %}
+{% block content  %}
+    <div class="features">
+    {% for i in categories %}
+
+        <a href="{% url 'tests' i.id %}">
+            <button  type="button" class="btn btn-light btn-lg btn-block">{{ i.name_category }}</button>
+        </a>
+
+        <br>
+        <br>
+    {% endfor %}
+    </div>
+{% endblock %}

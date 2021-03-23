@@ -1,0 +1,16 @@
+{% extends 'abiturient/layout_abit.html' %}
+{% block content %}
+     <div class="features">
+    {% for i in tests %}
+        <a href="{% url 'questions' i.id %}">
+            <button  type="button" class="btn btn-light btn-lg btn-block">
+                {{ i.name_test }}
+            </button>
+        </a>
+
+        <br>
+        <br>
+    {% endfor %}
+    </div>
+
+{% endblock %}

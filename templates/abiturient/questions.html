@@ -1,0 +1,29 @@
+{% extends 'abiturient/layout_abit.html' %}
+{% block content %}
+     <div class="features">
+    {% for i in questions %}
+        <a href="#">
+            <button  type="button" class="btn btn-light btn-lg btn-block">
+                {{ i.text_question }}
+            </button>
+        </a>
+
+        <br>
+        <br>
+    {% endfor %}
+{#     <form method="get" >{% csrf_token %}#}
+{#        <p style="color: #fff" class="h3">Задание {{ number_quest }}</p>#}
+{#    <p style="color: #fff">{{ question }}</p>#}
+{#    <ul>#}
+{#        {% for j in answers %}#}
+{#           {% comment %} <i><a href="tasks?select={{j.id}}">{{ j.select }}</a></i><p></p>{% endcomment %}#}
+{#             <input style="color: #fff" type="radio" id="select{{ j.id }}" name="selected" value="{{j.id}}">#}
+{#             <label style="color: #fff" for="select{{ j.id }}">{{ j.text_answer }}</label><br>#}
+{#        {% endfor %}#}
+{#    </ul>#}
+{#        <input type="hidden" name="num" value="{{ number_quest }}">#}
+{#    <button type="submit" >Отправить</button>#}
+{#    </form>#}
+    </div>
+
+{% endblock %}

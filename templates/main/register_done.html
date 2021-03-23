@@ -1,0 +1,7 @@
+{% extends 'abiturient/layout_abit.html' %}
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+    <h1 style="color: #fff">Welcome {{ new_user.first_name }}!</h1>
+    <p style="color: #fff">Your account has been successfully created. Now you can <a href="{% url "categories" %}"> Start teting</a>.</p>
+{% endblock %}

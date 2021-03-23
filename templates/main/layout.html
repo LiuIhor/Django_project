@@ -1,0 +1,41 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+</head>
+<body>
+    <aside>
+{#        <img src="#" alt="Logo">#}
+        <span class="logo" >НТУ ХПИ</span>
+        <h3>Меню</h3>
+        <ul>
+            <a href="{% url 'auth_teach' %}">
+                <li><i class="fas fa-angle-double-right"></i> Авторизация для преподавателя</li>
+            </a>
+            <a href="{% url 'auth_abit' %}">
+                <li><i class="fas fa-angle-double-right"></i> Регистрация для абитуриента</li>
+            </a>
+            <a href="{% url 'login' %}">
+                {% if request.user.is_authenticated %}
+                    <li><i class="fas fa-angle-double-right"></i>Добро пожаловать {{ user }}</li>
+                    {% else %}
+                    <li><i class="fas fa-angle-double-right"></i> Авторизация для абитуриента</li>
+                {% endif %}
+            </a>
+            <a href="{% url 'categories' %} "><li><i class="fas fa-paper-plane"></i> Контакты</li></a>
+        </ul>
+    </aside>
+    <main>
+         {% block content %}
+         {% endblock %}
+    </main>
+</body>
+</html>
